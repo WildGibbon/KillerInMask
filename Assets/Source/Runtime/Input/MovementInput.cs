@@ -1,7 +1,7 @@
-﻿using KillerInMask.Model.UI;
+﻿using MaskedKiller.Model.UI;
 using UnityEngine;
 
-namespace KillerInMask.Model.Input
+namespace MaskedKiller.Model.Input
 {
 	public class MovementInput : MonoBehaviour, IMovementInput
 	{

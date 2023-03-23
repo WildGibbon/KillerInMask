@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace KillerInMask.Model.UI
+namespace MaskedKiller.Model.UI
 {
 	internal class HoldElement : MonoBehaviour, IHoldElement, IPointerDownHandler, IPointerUpHandler
 	{

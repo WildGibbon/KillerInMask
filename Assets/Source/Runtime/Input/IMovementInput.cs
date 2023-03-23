@@ -1,4 +1,4 @@
-﻿namespace KillerInMask.Model.Input
+﻿namespace MaskedKiller.Model.Input
 {
 	public interface IMovementInput
 	{

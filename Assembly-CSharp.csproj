@@ -56,23 +56,29 @@
     <Analyzer Include="D:\VisualStudio\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Source\Runtime\Model\Health\Health.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Health\IHealth.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Health\AttackReciever.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Attack\IAttack.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Attack\DefaultAttack.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Attack\PhysicalAttack.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\UI\IUIButton.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\UI\Buttons\IButton.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\UI\UIButton.cs" />
     <Compile Include="Assets\Source\Runtime\Input\IMovementInput.cs" />
-    <Compile Include="Assets\Source\Runtime\Input\MovementInput.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Attack\PhysicalAttack.cs" />
     <Compile Include="Assets\Source\Runtime\Input\HoldElements\HoldElement.cs" />
-    <Compile Include="Assets\Source\Runtime\Input\HoldElements\IHoldElement.cs" />
-    <Compile Include="Assets\Source\Runtime\Model\Movement\IMovement.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Attack\DefaultAttack.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\UI\IUIButton.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Health\IHealth.cs" />
     <Compile Include="Assets\Source\Runtime\Model\Movement\Movement.cs" />
     <Compile Include="Assets\Source\Runtime\View\DirectionalMovement\IMovementView.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Movement\IMovement.cs" />
+    <Compile Include="Assets\Source\Runtime\Input\HoldElements\IHoldElement.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Health\Health.cs" />
+    <Compile Include="Assets\Source\Runtime\Input\MovementInput.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\UI\Buttons\IButton.cs" />
     <Compile Include="Assets\Source\Runtime\View\DirectionalMovement\MovementView.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Health\AttackReciever.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Attack\IAttack.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\UI\UIButton.cs" />
+    <Compile Include="Assets\Source\Runtime\Model\Player\Player.cs" />
+    <Compile Include="Assets\Source\Runtime\Game\SystemUpdates\ISystemUpdate.cs" />
+    <Compile Include="Assets\Source\Runtime\Game\SystemUpdates\IUpdatable.cs" />
+    <Compile Include="Assets\Source\Runtime\Game\SystemUpdates\SystemUpdate.cs" />
+    <Compile Include="Assets\Source\Runtime\View\Health\IHealthView.cs" />
+    <Compile Include="Assets\Source\Runtime\View\Health\SliderHealthView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

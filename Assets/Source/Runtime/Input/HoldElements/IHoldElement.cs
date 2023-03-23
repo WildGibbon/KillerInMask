@@ -1,4 +1,4 @@
-﻿namespace KillerInMask.Model.UI
+﻿namespace MaskedKiller.Model.UI
 {
 	public interface IHoldElement
 	{
