@@ -1,6 +1,7 @@
 ﻿using MaskedKiller.Game.SystemUpdates;
 using MaskedKiller.Model.Input;
 using MaskedKiller.Model.Movement;
+using System;
 using UnityEngine;
 
 namespace MaskedKiller.Model.Player
@@ -9,6 +10,12 @@ namespace MaskedKiller.Model.Player
 	{
 		private readonly IMovementInput _movementInput;
 		private readonly IMovement _movement;
+
+		public Player(IMovementInput movementInput, IMovement movement)
+		{
+			_movementInput = movementInput ?? throw new ArgumentNullException(nameof(movementInput));
+			_movement = movement ?? throw new ArgumentNullException(nameof(movement));
+		}
 
 		public void Update(float deltaTime)
 		{
