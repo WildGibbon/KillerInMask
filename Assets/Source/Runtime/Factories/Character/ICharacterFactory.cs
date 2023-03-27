@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MaskedKiller.Game.Data.Views;
+using MaskedKiller.Model.Character;
 
-namespace Assets.Source.Runtime.Factories.Character
+namespace MaskedKiller.Factories.Character
 {
-	internal interface ICharacterFactory
+	public interface ICharacterFactory
 	{
+		ICharacter Create();
+		void Init(IViews views);
 	}
 }

@@ -5,7 +5,7 @@ using System;
 
 namespace MaskedKiller.Model.Player
 {
-	public class Player : IUpdatable
+	public class Player : IPlayer
 	{
 		private readonly IMovementInput _movementInput;
 		private readonly ICharacter _character;
