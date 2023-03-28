@@ -14,19 +14,19 @@ namespace MaskedKiller.Factories.Player
 		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IMovementInput _movementInput;
 
-		private IUIButtons _buttons;
+		private IUI _ui;
 
 		public IPlayer Create()
 		{
 			var character = _characterFactory.Create();
-			_buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
+			_ui.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
 
 			return new Model.Player.Player(_movementInput, character);
 		}
 
-		public void Init(IUIButtons uIButtons)
+		public void Init(IUI ui)
 		{
-			_buttons = uIButtons ?? throw new ArgumentNullException(nameof(uIButtons));
+			_ui = ui ?? throw new ArgumentNullException(nameof(ui));
 		}
 	}
 }

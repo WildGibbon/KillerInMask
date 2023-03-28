@@ -11,6 +11,6 @@ namespace MaskedKiller.Factories.Player
 	public interface IPlayerFactory
 	{
 		IPlayer Create();
-		void Init(IUIButtons uIButtons);
+		void Init(IUI ui);
 	}
 }
