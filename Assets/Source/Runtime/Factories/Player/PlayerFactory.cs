@@ -1,11 +1,11 @@
 ﻿using MaskedKiller.Factories.Character;
-using MaskedKiller.Game.Data.UI;
-using MaskedKiller.Model.Input;
 using MaskedKiller.Model.Player;
+using MaskedKiller.Model.Input;
 using MaskedKiller.UI.Buttons;
+using MaskedKiller.Game.Data;
 using Sirenix.OdinInspector;
-using System;
 using UnityEngine;
+using System;
 
 namespace MaskedKiller.Factories.Player
 {
@@ -14,19 +14,20 @@ namespace MaskedKiller.Factories.Player
 		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IMovementInput _movementInput;
 
-		private IUI _ui;
+		private IGameData _gameData;
 
 		public IPlayer Create()
 		{
+			_characterFactory.Init(_gameData.Views);
 			var character = _characterFactory.Create();
-			_ui.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
+			_gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
 
 			return new Model.Player.Player(_movementInput, character);
 		}
 
-		public void Init(IUI ui)
+		public void Init(IGameData gameData)
 		{
-			_ui = ui ?? throw new ArgumentNullException(nameof(ui));
+			_gameData = gameData ?? throw new ArgumentNullException(nameof(gameData));
 		}
 	}
 }
