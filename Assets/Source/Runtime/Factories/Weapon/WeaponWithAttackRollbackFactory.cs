@@ -12,10 +12,11 @@ namespace MaskedKiller.Factories.Weapon
 	public class WeaponWithAttackRollbackFactory : SerializedMonoBehaviour, IWeaponFactory
 	{
 		[SerializeField] private IWeaponFactory _weaponFactory;
+		[SerializeField] private float _delayInSeconds;
 
 		public IWeapon Create()
 		{
-			return new WeaponWithAttackRollback(_weaponFactory.Create());
+			return new WeaponWithAttackRollback(_weaponFactory.Create(), _delayInSeconds);
 		}
 	}
 }

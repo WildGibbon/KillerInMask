@@ -6,14 +6,18 @@ namespace MaskedKiller.Model.Weapon
 {
 	public class WeaponWithAttackRollback : IWeapon
 	{
-		public bool CanAttack { get; private set; }
+		public bool CanAttack { get; private set; } = true;
 
 		private readonly IWeapon _weapon;
 		private readonly float _rollbackDelayInSeconds;
 
-		public WeaponWithAttackRollback(IWeapon weapon)
+		public WeaponWithAttackRollback(IWeapon weapon, float rollbackDelayInSeconds)
 		{
+			if(rollbackDelayInSeconds < 0)
+				throw new ArgumentOutOfRangeException(nameof(rollbackDelayInSeconds));
+
 			_weapon = weapon ?? throw new ArgumentNullException(nameof(weapon));
+			_rollbackDelayInSeconds = rollbackDelayInSeconds;
 		}
 
 		public void AttackIn(Vector2 direction)
@@ -22,9 +26,7 @@ namespace MaskedKiller.Model.Weapon
 				throw new InvalidOperationException();
 
 			_weapon.AttackIn(direction);
-
-			if(CanAttack)
-				StartRollback();
+			StartRollback();
 		}
 
 		private async void StartRollback()

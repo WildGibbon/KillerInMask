@@ -10,5 +10,6 @@ namespace MaskedKiller.Model.Character
 	{
 		void Move(MoveDirection direction);
 		void AttackWithWeapon();
+		void Jump();
 	}
 }

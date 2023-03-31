@@ -12,5 +12,7 @@ namespace MaskedKiller.Game.Data.UI
 	public class UIButtons : SerializedMonoBehaviour, IUIButtons
 	{
 		[field:SerializeField] public IUIButton WeaponAttackButton { get; private set; }
+
+		[field: SerializeField] public IUIButton JumpButton { get; private set; }
 	}
 }
