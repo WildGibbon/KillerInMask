@@ -12,7 +12,7 @@ namespace MaskedKiller.Model.Character
 		private readonly IWeaponSelector _selector;
 		private readonly ICharacterJump _jump;
 
-		private Vector2 _playerViewDirection;
+		private Vector2 _characterViewDirection;
 
 		public Character(ICharacterMovement movement, IWeaponSelector selector, ICharacterJump jump)
 		{
@@ -23,20 +23,22 @@ namespace MaskedKiller.Model.Character
 
 		public void Move(MoveDirection direction)
 		{
-			var newDirection = new Vector2((int)direction, 0);
-			_movement.Move(newDirection);
+			var viewDirection = new Vector2((int)direction, 0);
+			_movement.Move(viewDirection);
 
-			_playerViewDirection = newDirection;
+			_characterViewDirection = viewDirection;
 		}
 
 		public void AttackWithWeapon()
 		{
-			_selector.CurrrentWeapon.AttackIn(_playerViewDirection);
+			if(_selector.CurrrentWeapon.CanAttack)
+				_selector.CurrrentWeapon.AttackIn(_characterViewDirection);
 		}
 
 		public void Jump()
 		{
-			_jump.Jump();
+			if(_jump.CanJump)
+				_jump.Jump();
 		}
 	}
 }

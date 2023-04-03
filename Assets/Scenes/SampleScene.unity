@@ -360,7 +360,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _moveSpeed: 10
+  _moveSpeed: 7
 --- !u!114 &488717195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 488717202}
+    - {fileID: 488717200}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -470,10 +470,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 20
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 20
-  m_Material: {fileID: 6200000, guid: b401c553445cde74db9ff8319ef76c6d, type: 2}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: 8513278db020e3d4e9dcc850155c3a41, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -529,6 +529,7 @@ MonoBehaviour:
     - Name: _weaponFactory
       Entry: 10
       Data: 0
+  _delayInSeconds: 3
 --- !u!114 &488717201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +601,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _jumpForce: 10
+  _jumpForce: 700
 --- !u!114 &488717204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,8 +1440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 402.49, y: -32}
-  m_SizeDelta: {x: 89.6261, y: 98.997}
+  m_AnchoredPosition: {x: -339.86, y: -143.57}
+  m_SizeDelta: {x: 66.72, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363561419
 MonoBehaviour:
@@ -1573,8 +1574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 404.81, y: -193.5599}
-  m_SizeDelta: {x: 94.257, y: 97.2001}
+  m_AnchoredPosition: {x: -268.85754, y: -219.1154}
+  m_SizeDelta: {x: 75.2964, y: 76.092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443721003
 MonoBehaviour:
@@ -1895,8 +1896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -437.5599, y: -201.06}
-  m_SizeDelta: {x: 101.8346, y: 112.2}
+  m_AnchoredPosition: {x: -409.55588, y: -219.1154}
+  m_SizeDelta: {x: 72.6687, y: 76.0896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760822470
 MonoBehaviour:

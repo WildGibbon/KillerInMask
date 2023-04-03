@@ -9,13 +9,14 @@ namespace MaskedKiller.Factories.Character.Jump
 {
 	public class CharacterJumpFactory : SerializedMonoBehaviour, ICharacterJumpFactory
 	{
+		[SerializeField] private ISurfaceCollisionDetector _collisionDetector;
 		[SerializeField] private float _jumpForce;
 
 		private IViews _views;
 
 		public ICharacterJump Create()
 		{
-			return new CharacterJump(_views.CharacterJumpView, _jumpForce);
+			return new CharacterJump(_collisionDetector, _views.CharacterJumpView, _jumpForce);
 		}
 
 		public void Init(IViews views)
