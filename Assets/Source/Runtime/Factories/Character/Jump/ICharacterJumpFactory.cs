@@ -5,7 +5,6 @@ namespace MaskedKiller.Factories.Character.Jump
 {
 	public interface ICharacterJumpFactory
 	{
-		ICharacterJump Create();
-		void Init(IViews views);
+		ICharacterJump Create(IViews views);
 	}
 }

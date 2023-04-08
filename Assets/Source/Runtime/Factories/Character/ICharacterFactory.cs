@@ -5,7 +5,6 @@ namespace MaskedKiller.Factories.Character
 {
 	public interface ICharacterFactory
 	{
-		ICharacter Create();
-		void Init(IViews views);
+		ICharacter Create(IViews views);
 	}
 }

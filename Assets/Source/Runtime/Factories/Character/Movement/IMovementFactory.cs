@@ -5,7 +5,6 @@ namespace MaskedKiller.Factories.Character.Movement
 {
 	public interface IMovementFactory
 	{
-		ICharacterMovement Create();
-		void Init(IViews views);
+		ICharacterMovement Create(IViews views);
 	}
 }

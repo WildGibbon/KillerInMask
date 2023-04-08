@@ -1,4 +1,5 @@
-﻿using MaskedKiller.Factories.Character;
+﻿using MaskedKiller.Model.UI.Buttons.Kind;
+using MaskedKiller.Factories.Character;
 using MaskedKiller.Model.UI.Buttons;
 using MaskedKiller.Model.Player;
 using MaskedKiller.Model.Input;
@@ -15,22 +16,17 @@ namespace MaskedKiller.Factories.Player
 		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IMovementInput _movementInput;
 
-		private IGameData _gameData;
+		public IPlayer Create(IGameData gameData)
+		{;
+			var character = _characterFactory.Create(gameData.Views);
 
-		public IPlayer Create()
-		{
-			_characterFactory.Init(_gameData.Views);
-			var character = _characterFactory.Create();
+			gameData.UI.Buttons.PreviousWeaponButton.Init(new PreviousWeaponButton(character));
+			gameData.UI.Buttons.NextWeaponButton.Init(new NextWeaponButton(character));
 
-			_gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
-			_gameData.UI.Buttons.JumpButton.Init(new CharacterJumpButton(character));
+			gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character));
+			gameData.UI.Buttons.JumpButton.Init(new CharacterJumpButton(character));
 
 			return new Model.Player.Player(_movementInput, character);
-		}
-
-		public void Init(IGameData gameData)
-		{
-			_gameData = gameData ?? throw new ArgumentNullException(nameof(gameData));
 		}
 	}
 }

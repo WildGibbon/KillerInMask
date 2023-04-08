@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
 
 namespace MaskedKiller.Model.Weapon
 {
@@ -26,7 +26,7 @@ namespace MaskedKiller.Model.Weapon
 
 		public void Remove(int index)
 		{
-			throw new System.NotImplementedException();
+			_weapons.Remove(_weapons[index]);
 		}
 	}
 }

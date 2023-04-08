@@ -18,8 +18,7 @@ namespace MaskedKiller.Game
 
 		public void Play()
 		{
-			_playerFactory.Init(_gameData);
-			_systemUpdates.Add(_playerFactory.Create());
+			_systemUpdates.Add(_playerFactory.Create(_gameData));
 		}
 
 		private void Update()

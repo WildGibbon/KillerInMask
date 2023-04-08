@@ -10,16 +10,12 @@ namespace MaskedKiller.Factories.Character.Movement
 	{
 		[SerializeField] private float _moveSpeed;
 
-		private IViews _views;
-
-		public ICharacterMovement Create()
+		public ICharacterMovement Create(IViews views)
 		{
-			return new CharacterMovement(_views.MovementView, _moveSpeed);
-		}
+			if(views == null)
+				throw new ArgumentNullException(nameof(views));
 
-		public void Init(IViews views)
-		{
-			_views = views ?? throw new ArgumentNullException(nameof(views));
+			return new CharacterMovement(views.MovementView, _moveSpeed);
 		}
 	}
 }

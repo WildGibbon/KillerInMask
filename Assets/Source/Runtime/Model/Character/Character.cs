@@ -40,5 +40,15 @@ namespace MaskedKiller.Model.Character
 			if(_jump.CanJump)
 				_jump.Jump();
 		}
+
+		public void SwitchPreviousWeapon()
+		{
+			_selector.SwitchToPreviousWeapon();
+		}
+
+		public void SwitchNextWeapon()
+		{
+			_selector.SwitchToNextWeapon();
+		}
 	}
 }

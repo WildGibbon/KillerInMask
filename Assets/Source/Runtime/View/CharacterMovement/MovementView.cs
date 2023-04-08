@@ -13,7 +13,7 @@ namespace MaskedKiller.View.Movement
 
 		public void Visualize(Vector2 velocity)
 		{
-			_rigidbody.velocity = velocity;
+			_rigidbody.velocity = new Vector2(velocity.x, _rigidbody.velocity.y);
 		}
 	}
 }

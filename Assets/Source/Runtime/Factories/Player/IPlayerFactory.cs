@@ -11,7 +11,6 @@ namespace MaskedKiller.Factories.Player
 {
 	public interface IPlayerFactory
 	{
-		IPlayer Create();
-		void Init(IGameData gameData);
+		IPlayer Create(IGameData gameData);
 	}
 }

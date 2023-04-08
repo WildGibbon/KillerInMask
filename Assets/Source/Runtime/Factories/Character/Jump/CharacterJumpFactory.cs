@@ -12,16 +12,12 @@ namespace MaskedKiller.Factories.Character.Jump
 		[SerializeField] private ISurfaceCollisionDetector _collisionDetector;
 		[SerializeField] private float _jumpForce;
 
-		private IViews _views;
-
-		public ICharacterJump Create()
+		public ICharacterJump Create(IViews views)
 		{
-			return new CharacterJump(_collisionDetector, _views.CharacterJumpView, _jumpForce);
-		}
+			if (views == null)
+				throw new ArgumentNullException(nameof(views));
 
-		public void Init(IViews views)
-		{
-			_views = views ?? throw new ArgumentNullException(nameof(views));
+			return new CharacterJump(_collisionDetector, views.CharacterJumpView, _jumpForce);
 		}
 	}
 }
