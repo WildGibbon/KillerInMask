@@ -17,7 +17,7 @@ namespace MaskedKiller.Factories.Player
 		[SerializeField] private IMovementInput _movementInput;
 
 		public IPlayer Create(IGameData gameData)
-		{;
+		{
 			var character = _characterFactory.Create(gameData.Views);
 
 			gameData.UI.Buttons.PreviousWeaponButton.Init(new PreviousWeaponButton(character));
