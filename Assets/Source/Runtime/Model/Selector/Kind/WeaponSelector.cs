@@ -26,7 +26,7 @@ namespace MaskedKiller.Model.Selector
 		}
 
 		public void PreviousItem()
-		{
+		{  
 			if (_currentWeaponIndex == 0)
 				_currentWeaponIndex = _weapons.Count - 1;
 			else
