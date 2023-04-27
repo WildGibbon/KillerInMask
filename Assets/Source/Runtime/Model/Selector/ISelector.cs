@@ -1,8 +1,8 @@
 ﻿namespace MaskedKiller.Model.Selector
 {
-	public interface ISelector<T>
+	public interface ISelector
 	{
-		T CurrrentItem { get; }
+		dynamic CurrrentItem { get; }
 		void PreviousItem();
 		void NextItem();
 	}

@@ -11,7 +11,6 @@ namespace MaskedKiller.Factories.Character
 {
 	public class CharacterFactory : SerializedMonoBehaviour, ICharacterFactory
 	{
-		[SerializeField] private IWeaponSelectorFactory _selectorFactory;
 		[SerializeField] private ICharacterJumpFactory _jumpFactory;
 		[SerializeField] private IMovementFactory _movementFactory;
 
@@ -20,7 +19,7 @@ namespace MaskedKiller.Factories.Character
 			if(views == null)
 				throw new ArgumentNullException(nameof(views));
 
-			return new Model.Character.Character(_movementFactory.Create(views), _selectorFactory.Create(), _jumpFactory.Create(views));
+			return new Model.Character.Character(_movementFactory.Create(views), _jumpFactory.Create(views));
 		}
 	}
 }

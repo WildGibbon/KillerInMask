@@ -3,21 +3,20 @@ using MaskedKiller.Model.Character.Jump;
 using MaskedKiller.Model.Weapon;
 using UnityEngine;
 using System;
+using MaskedKiller.Model.Selector;
 
 namespace MaskedKiller.Model.Character
 {
 	public class Character : ICharacter
 	{
 		private readonly ICharacterMovement _movement;
-		private readonly IWeaponSelector _selector;
 		private readonly ICharacterJump _jump;
 
 		private Vector2 _characterViewDirection;
 
-		public Character(ICharacterMovement movement, IWeaponSelector selector, ICharacterJump jump)
+		public Character(ICharacterMovement movement, ICharacterJump jump)
 		{
 			_movement = movement ?? throw new ArgumentNullException(nameof(movement));
-			_selector = selector ?? throw new ArgumentNullException(nameof(selector));
 			_jump = jump ?? throw new ArgumentNullException(nameof(jump));
 		}
 
@@ -29,26 +28,16 @@ namespace MaskedKiller.Model.Character
 			_characterViewDirection = viewDirection;
 		}
 
-		public void AttackWithWeapon()
+		public void AttackWithWeapon(IWeapon weapon)
 		{
-			if(_selector.CurrrentWeapon.CanAttack)
-				_selector.CurrrentWeapon.AttackIn(_characterViewDirection);
+			if(weapon.CanAttack)
+				weapon.AttackIn(_characterViewDirection);
 		}
 
 		public void Jump()
 		{
 			if(_jump.CanJump)
 				_jump.Jump();
-		}
-
-		public void SwitchPreviousWeapon()
-		{
-			_selector.SwitchToPreviousWeapon();
-		}
-
-		public void SwitchNextWeapon()
-		{
-			_selector.SwitchToNextWeapon();
 		}
 	}
 }

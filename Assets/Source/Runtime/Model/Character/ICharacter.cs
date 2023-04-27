@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaskedKiller.Model.Weapon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,7 @@ namespace MaskedKiller.Model.Character
 	public interface ICharacter
 	{
 		void Move(MoveDirection direction);
-		void SwitchPreviousWeapon();
-		void SwitchNextWeapon();
-		void AttackWithWeapon();
+		void AttackWithWeapon(IWeapon weapon);
 		void Jump();
 	}
 }
