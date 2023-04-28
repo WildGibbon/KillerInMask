@@ -9,11 +9,13 @@ using MaskedKiller.UI.Buttons;
 using MaskedKiller.Game.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using MaskedKiller.Model.Ability;
 
 namespace MaskedKiller.Factories.Player
 {
 	public class PlayerFactory : SerializedMonoBehaviour, IPlayerFactory
 	{
+		[SerializeField] private ISelectorFactory<IAbility> _abilitySelectorFactory;
 		[SerializeField] private ISelectorFactory<IWeapon> _weaponSelectorFactory;
 		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IMovementInput _movementInput;
@@ -21,11 +23,17 @@ namespace MaskedKiller.Factories.Player
 		public IPlayer Create(IGameData gameData)
 		{
 			var character = _characterFactory.Create(gameData.Views);
-			var selector = _weaponSelectorFactory.Create();
+			var abilitySelector = _abilitySelectorFactory.Create();
+			var weaponSelector = _weaponSelectorFactory.Create();
 
-			gameData.UI.Buttons.PreviousWeaponButton.Init(new PreviousSelectorItemButton<IWeapon>(selector));
-			gameData.UI.Buttons.NextWeaponButton.Init(new NextSelectorItemButton<IWeapon>(selector));
-			gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character, selector));
+			gameData.UI.Buttons.PreviousWeaponButton.Init(new SelectorPreviousItemButton<IWeapon>(weaponSelector));
+			gameData.UI.Buttons.NextWeaponButton.Init(new NextNextItemButton<IWeapon>(weaponSelector));
+			gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character, weaponSelector));
+
+			gameData.UI.Buttons.PreviousWeaponButton.Init(new SelectorPreviousItemButton<IAbility>(abilitySelector));
+			gameData.UI.Buttons.NextAbilityButton.Init(new NextNextItemButton<IAbility>(abilitySelector));
+			gameData.UI.Buttons.AbilityUseButton.Init(new AbilityUseButton(abilitySelector));
+
 			gameData.UI.Buttons.JumpButton.Init(new CharacterJumpButton(character));
 
 			return new Model.Player.Player(_movementInput, character);

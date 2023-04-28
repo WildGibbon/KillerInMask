@@ -1,20 +1,20 @@
 ﻿using MaskedKiller.Model.Selector;
 using System;
 
-namespace MaskedKiller.Model.UI.Buttons.Kind
+namespace MaskedKiller.Model.UI.Buttons
 {
-	public class PreviousSelectorItemButton<T> : IButton
+	public class NextNextItemButton<T> : IButton
 	{
 		private readonly ISelector<T> _selector;
 
-		public PreviousSelectorItemButton(ISelector<T> selector)
+		public NextNextItemButton(ISelector<T> selector)
 		{
 			_selector = selector ?? throw new ArgumentNullException(nameof(selector));
 		}
 
 		public void Press()
 		{
-			_selector.PreviousItem();
+			_selector.NextItem();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 using MaskedKiller.Model.Ability;
 using System;
 
-namespace MaskedKiller.Model.Selector.Kind
+namespace MaskedKiller.Model.Selector
 {
 	public class AbilitySelector : ISelector<IAbility>
 	{
