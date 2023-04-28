@@ -6,8 +6,12 @@ namespace MaskedKiller.Game.Data.UI
 	{
 		IUIButton PreviousWeaponButton { get; }
 		IUIButton NextWeaponButton { get; }
-
 		IUIButton WeaponAttackButton { get; }
+
+		IUIButton AbilityUseButton { get; }
+		IUIButton PreviousAbilityButton { get; }
+		IUIButton NextAbilityButton { get; }
+		
 		IUIButton JumpButton { get; } 
 	}
 }

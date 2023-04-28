@@ -9,7 +9,7 @@ namespace MaskedKiller.Model.Ability.Kind
 		public bool CanUse { get; private set; }
 
 		private readonly float _timeSlowCoefficient;
-		private readonly float _durationOfAbility;
+		private readonly float _abilityDuration;
 
 		public BendTimeAbility(float timeSlowCoefficient, float durationOfAbility)
 		{
@@ -19,7 +19,7 @@ namespace MaskedKiller.Model.Ability.Kind
 				throw new ArgumentOutOfRangeException(nameof(durationOfAbility));
 
 			_timeSlowCoefficient = timeSlowCoefficient;
-			_durationOfAbility = durationOfAbility;
+			_abilityDuration = durationOfAbility;
 		}
 
 
@@ -35,7 +35,7 @@ namespace MaskedKiller.Model.Ability.Kind
 		{
 			CanUse = false;
 			Time.timeScale = _timeSlowCoefficient;
-			await UniTask.Delay(TimeSpan.FromSeconds(_durationOfAbility));
+			await UniTask.Delay(TimeSpan.FromSeconds(_abilityDuration));
 			Time.timeScale = 1;
 			CanUse = true;
 		}

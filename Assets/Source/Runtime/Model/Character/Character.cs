@@ -3,7 +3,6 @@ using MaskedKiller.Model.Character.Jump;
 using MaskedKiller.Model.Weapon;
 using UnityEngine;
 using System;
-using MaskedKiller.Model.Selector;
 
 namespace MaskedKiller.Model.Character
 {
@@ -28,16 +27,16 @@ namespace MaskedKiller.Model.Character
 			_characterViewDirection = viewDirection;
 		}
 
-		public void AttackWithWeapon(IWeapon weapon)
-		{
-			if(weapon.CanAttack)
-				weapon.AttackIn(_characterViewDirection);
-		}
-
 		public void Jump()
 		{
 			if(_jump.CanJump)
 				_jump.Jump();
+		}
+
+		public void AttackWithWeapon(IWeapon weapon)
+		{
+			if(weapon.CanAttack)
+				weapon.AttackIn(_characterViewDirection);
 		}
 	}
 }

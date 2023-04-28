@@ -13,9 +13,10 @@ namespace MaskedKiller.Game.Data.UI
 	{
 		[field: SerializeField] public IUIButton PreviousWeaponButton { get; private set; }
 		[field: SerializeField] public IUIButton NextWeaponButton { get; private set; }
-
 		[field:SerializeField] public IUIButton WeaponAttackButton { get; private set; }
 		[field: SerializeField] public IUIButton JumpButton { get; private set; }
-
+		[field: SerializeField] public IUIButton AbilityUseButton { get; private set; }
+		[field: SerializeField] public IUIButton PreviousAbilityButton { get; private set; }
+		[field: SerializeField] public IUIButton NextAbilityButton { get; private set; }
 	}
 }

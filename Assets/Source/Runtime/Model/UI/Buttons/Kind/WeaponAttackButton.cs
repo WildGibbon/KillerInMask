@@ -3,15 +3,16 @@ using MaskedKiller.Model.Character;
 using MaskedKiller.Model.Selector;
 using System;
 using UnityEngine;
+using MaskedKiller.Model.Weapon;
 
 namespace MaskedKiller.UI.Buttons
 {
 	public class WeaponAttackButton : IButton
 	{
+		private readonly ISelector<IWeapon> _selector;
 		private readonly ICharacter _character;
-		private readonly ISelector _selector;
 
-		public WeaponAttackButton(ICharacter character, ISelector selector)
+		public WeaponAttackButton(ICharacter character, ISelector<IWeapon> selector)
 		{
 			_character = character ?? throw new ArgumentNullException(nameof(character));
 			_selector = selector ?? throw new ArgumentNullException(nameof(selector));
