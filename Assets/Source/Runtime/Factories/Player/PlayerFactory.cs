@@ -2,6 +2,7 @@
 using MaskedKiller.Factories.Character;
 using MaskedKiller.Factories.Selector;
 using MaskedKiller.Model.UI.Buttons;
+using MaskedKiller.Model.Ability;
 using MaskedKiller.Model.Player;
 using MaskedKiller.Model.Weapon;
 using MaskedKiller.Model.Input;
@@ -9,7 +10,6 @@ using MaskedKiller.UI.Buttons;
 using MaskedKiller.Game.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using MaskedKiller.Model.Ability;
 
 namespace MaskedKiller.Factories.Player
 {
