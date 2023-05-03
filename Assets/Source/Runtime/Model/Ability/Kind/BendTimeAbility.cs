@@ -6,7 +6,7 @@ namespace MaskedKiller.Model.Ability.Kind
 {
 	public class BendTimeAbility : IAbility
 	{
-		public bool CanUse { get; private set; }
+		public bool CanUse { get; private set; } = true;
 
 		private readonly float _timeSlowCoefficient;
 		private readonly float _abilityDuration;

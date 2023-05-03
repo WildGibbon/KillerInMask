@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace MaskedKiller.Model.Ability
+﻿namespace MaskedKiller.Model.Ability
 {
 	public interface IAbility
 	{
