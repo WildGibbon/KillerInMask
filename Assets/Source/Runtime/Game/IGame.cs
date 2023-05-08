@@ -1,4 +1,5 @@
-﻿using MaskedKiller.Factories.Player;
+﻿using MaskedKiller.Factories.Ability.Mana;
+using MaskedKiller.Factories.Player;
 using MaskedKiller.Game.Data;
 
 namespace MaskedKiller.Game

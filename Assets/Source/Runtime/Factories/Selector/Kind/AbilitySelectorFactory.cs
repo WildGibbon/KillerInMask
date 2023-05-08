@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using MaskedKiller.Model.Ability;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using System;
-using MaskedKiller.Model.Weapon;
+using MaskedKiller.Model.Ability.Mana;
 
 namespace MaskedKiller.Factories.Selector
 {

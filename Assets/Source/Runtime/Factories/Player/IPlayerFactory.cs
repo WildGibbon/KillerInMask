@@ -1,5 +1,6 @@
 ﻿using MaskedKiller.Game.Data;
 using MaskedKiller.Game.Data.UI;
+using MaskedKiller.Model.Ability.Mana;
 using MaskedKiller.Model.Player;
 using System;
 using System.Collections.Generic;

@@ -1,17 +1,15 @@
-﻿using MaskedKiller.Factories.Player;
-using MaskedKiller.Game.Data;
+﻿using MaskedKiller.Factories.Ability.Mana;
 using MaskedKiller.Game.SystemUpdates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MaskedKiller.Factories.Player;
+using MaskedKiller.Game.Data;
 using UnityEngine;
+using System;
 
 namespace MaskedKiller.Game
 {
 	public class Game : MonoBehaviour, IGame
 	{
+		private IManaStorageFactory _manaStorageFactory;
 		private IPlayerFactory _playerFactory;
 		private ISystemUpdate _systemUpdates;
 		private IGameData _gameData;
