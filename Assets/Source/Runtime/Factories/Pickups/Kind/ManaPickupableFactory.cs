@@ -7,7 +7,7 @@ using System;
 
 namespace MaskedKiller.Factories.Pickups
 {
-	public class ManaPickupableFactory : SerializedMonoBehaviour, IManaPickupableFactory
+	public class ManaPickupableFactory : SerializedMonoBehaviour, IPickupableFactory
 	{
 		[SerializeField] private IManaStorageFactory _manaStorageFactory;
 		[SerializeField] private int _manaIncreaseValue;
@@ -18,12 +18,5 @@ namespace MaskedKiller.Factories.Pickups
 		{
 			return new ManaPickupable(_manaStorageFactory.Create(), _manaIncreaseValue);
 		}
-
-		public void Init(IManaStorage manaStorage)
-		{
-			_manaStorage = manaStorage ?? throw new ArgumentNullException(nameof(manaStorage));
-		}
-
-		//позже переделаю, щас как заглушка
 	}
 }
