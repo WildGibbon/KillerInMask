@@ -7,19 +7,10 @@ namespace MaskedKiller.Model.Character.Jump
 	{
 		public bool IsActive { get; private set; }
 
-		private void Awake()
-		{
-			GetComponent<BoxCollider2D>().isTrigger = true;
-		}
+		private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
 
-		private void OnTriggerEnter2D(Collider2D collision)
-		{
-			IsActive = true;
-		}
-
-		private void OnTriggerExit2D(Collider2D collision)
-		{
-			IsActive = false;
-		}
+		private void OnTriggerEnter2D(Collider2D collision) => IsActive = true;
+			
+		private void OnTriggerExit2D(Collider2D collision) => IsActive = false;
 	}
 }

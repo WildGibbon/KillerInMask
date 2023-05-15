@@ -1,13 +1,15 @@
 ﻿using MaskedKiller.View.CharacterJump;
-using MaskedKiller.View.Health;
 using MaskedKiller.View.Movement;
+using MaskedKiller.View.Health;
+using MaskedKiller.View.Mana;
 
 namespace MaskedKiller.Game.Data.Views
 {
 	public interface IViews
 	{
-		IMovementView MovementView { get; }
 		ICharacterJumpView CharacterJumpView { get; }
+		IManaStorageView ManaStorageView { get; }
+		IMovementView MovementView { get; }
 		IHealthView HealthView { get; }
 	}
 }

@@ -1,10 +1,10 @@
-﻿using MaskedKiller.Factories.Ability;
+﻿using MaskedKiller.Model.Ability.Mana;
+using MaskedKiller.Factories.Ability;
 using MaskedKiller.Model.Selector;
 using System.Collections.Generic;
 using MaskedKiller.Model.Ability;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using MaskedKiller.Model.Ability.Mana;
 
 namespace MaskedKiller.Factories.Selector
 {

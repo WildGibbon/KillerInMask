@@ -9,7 +9,6 @@ namespace MaskedKiller.Game
 {
 	public class Game : MonoBehaviour, IGame
 	{
-		private IManaStorageFactory _manaStorageFactory;
 		private IPlayerFactory _playerFactory;
 		private ISystemUpdate _systemUpdates;
 		private IGameData _gameData;
