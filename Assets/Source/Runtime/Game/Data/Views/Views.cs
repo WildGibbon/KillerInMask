@@ -11,7 +11,6 @@ namespace MaskedKiller.Game.Data.Views
 	public class Views : SerializedMonoBehaviour, IViews
 	{
 		[field: SerializeField] public ICharacterJumpView CharacterJumpView { get; private set; }
-		[field: SerializeField] public IManaStorageView ManaStorageView { get; private set; }
 		[field: SerializeField] public IMovementView MovementView { get; private set; }
 		[field: SerializeField] public IHealthView HealthView { get; private set; }
 	}

@@ -10,7 +10,7 @@ namespace MaskedKiller.Model.Pickups
 
 		public ManaPickupable(IManaStorage manaStorage, int manaIncreaseValue)
 		{
-			if(_manaIncreaseValue <= 0)
+			if(manaIncreaseValue <= 0)
 				throw new ArgumentOutOfRangeException(nameof(manaIncreaseValue));
 
 			_manaStorage = manaStorage ?? throw new ArgumentNullException(nameof(manaStorage));

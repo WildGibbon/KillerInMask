@@ -15,6 +15,7 @@ namespace MaskedKiller.Model.Pickups
 		public void Pickup()
 		{
 			_pickupable.Pickup();
+			Destroy(gameObject);
 		}
 	}
 }

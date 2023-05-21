@@ -5,6 +5,6 @@ namespace MaskedKiller.Factories.Ability.Mana
 {
 	public interface IManaStorageFactory
 	{
-		IManaStorage Create(IViews views);
+		IManaStorage Create();
 	}
 }

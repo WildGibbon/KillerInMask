@@ -1,22 +1,24 @@
 ﻿using MaskedKiller.Model.Ability.Mana;
 using MaskedKiller.Model.Ability;
+using MaskedKiller.View.Mana;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using MaskedKiller.Game.Data.Views;
 
 namespace MaskedKiller.Factories.Ability.Mana
 {
-	public class ManaStorageFactory : MonoBehaviour, IManaStorageFactory
+	public class ManaStorageFactory : SerializedMonoBehaviour, IManaStorageFactory
 	{
+		[SerializeField] private IManaStorageView _view;
 		[SerializeField] private int _maxValue;
 
 		private IManaStorage _instance;
 
-		public IManaStorage Create(IViews views)
+		public IManaStorage Create()
 		{
 			if(_instance != null)
 				return _instance;
 
-			_instance = new ManaStorage(views.ManaStorageView, _maxValue);
+			_instance = new ManaStorage(_view, _maxValue);
 
 			return _instance;
 		}

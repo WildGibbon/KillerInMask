@@ -19,6 +19,8 @@ namespace MaskedKiller.Model.Ability
 
 			_view = view ?? throw new ArgumentNullException(nameof(view));
 			_maxValue = CurrentValue = maxValue;
+
+			_view.Visualize(CurrentValue, maxValue);
 		}
 
 		public void AddMana(int amount)

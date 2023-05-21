@@ -8,7 +8,6 @@ namespace MaskedKiller.Game.Data.Views
 	public interface IViews
 	{
 		ICharacterJumpView CharacterJumpView { get; }
-		IManaStorageView ManaStorageView { get; }
 		IMovementView MovementView { get; }
 		IHealthView HealthView { get; }
 	}

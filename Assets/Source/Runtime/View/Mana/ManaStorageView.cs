@@ -7,6 +7,11 @@ namespace MaskedKiller.View.Mana
 	{
 		[SerializeField] private Slider _slider;
 
+		private void Awake()
+		{
+			_slider = GetComponent<Slider>();
+		}
+
 		public void Visualize(int currrentValue, int maxValue)
 		{
 			_slider.maxValue = maxValue;
