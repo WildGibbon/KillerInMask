@@ -29,6 +29,8 @@ namespace MaskedKiller.Model.Weapon.Kind
 
 			if (raycastHit && raycastHit.distance >= _attackDistance)
 				_attack.Attack(raycastHit.transform.GetComponent<IHealth>());
+
+			raycastHit.rigidbody.AddForce(direction * 1000);
 		}
 	}
 }
