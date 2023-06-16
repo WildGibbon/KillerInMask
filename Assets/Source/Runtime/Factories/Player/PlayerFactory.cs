@@ -26,12 +26,12 @@ namespace MaskedKiller.Factories.Player
 			var abilitySelector = _abilitySelectorFactory.Create();
 			var weaponSelector = _weaponSelectorFactory.Create();
 
-			gameData.UI.Buttons.PreviousWeaponButton.Init(new SelectorPreviousItemButton<IWeapon>(weaponSelector));
-			gameData.UI.Buttons.NextWeaponButton.Init(new NextNextItemButton<IWeapon>(weaponSelector));
+			gameData.UI.Buttons.PreviousWeaponButton.Init(new PreviousItemButton<IWeapon>(weaponSelector));
+			gameData.UI.Buttons.NextWeaponButton.Init(new NextItemButton<IWeapon>(weaponSelector));
 			gameData.UI.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character, weaponSelector));
 
-			gameData.UI.Buttons.PreviousAbilityButton.Init(new SelectorPreviousItemButton<IAbility>(abilitySelector));
-			gameData.UI.Buttons.NextAbilityButton.Init(new NextNextItemButton<IAbility>(abilitySelector));
+			gameData.UI.Buttons.PreviousAbilityButton.Init(new PreviousItemButton<IAbility>(abilitySelector));
+			gameData.UI.Buttons.NextAbilityButton.Init(new NextItemButton<IAbility>(abilitySelector));
 			gameData.UI.Buttons.AbilityUseButton.Init(new AbilityUseButton(abilitySelector));
 
 			gameData.UI.Buttons.JumpButton.Init(new CharacterJumpButton(character));

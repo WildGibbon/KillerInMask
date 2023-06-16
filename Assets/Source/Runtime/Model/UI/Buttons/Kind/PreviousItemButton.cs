@@ -3,11 +3,11 @@ using System;
 
 namespace MaskedKiller.Model.UI.Buttons.Kind
 {
-	public class SelectorPreviousItemButton<T> : IButton
+	public class PreviousItemButton<T> : IButton
 	{
 		private readonly ISelector<T> _selector;
 
-		public SelectorPreviousItemButton(ISelector<T> selector)
+		public PreviousItemButton(ISelector<T> selector)
 		{
 			_selector = selector ?? throw new ArgumentNullException(nameof(selector));
 		}

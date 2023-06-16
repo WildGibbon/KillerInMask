@@ -8,14 +8,11 @@ namespace MaskedKiller.Factories.Ability
 {
 	public class BendTimeAbilityFactory : SerializedMonoBehaviour, IAbilityFactory
 	{
-		[SerializeField] private IManaStorageFactory _manaStorageFactory;
 		[SerializeField] private float _timeSlowCoefficient;
-		[SerializeField] private float _abilityDuration;
-		[SerializeField] private int _abilityUseCost;
 		
 		public IAbility Create()
 		{
-			return new BendTimeAbility(_timeSlowCoefficient, _manaStorageFactory.Create(), _abilityDuration, _abilityUseCost);
+			return new BendTimeAbility(_timeSlowCoefficient);
 		}
 	}
 }

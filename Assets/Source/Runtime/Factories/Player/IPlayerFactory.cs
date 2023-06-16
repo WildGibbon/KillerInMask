@@ -1,12 +1,5 @@
-﻿using MaskedKiller.Game.Data;
-using MaskedKiller.Game.Data.UI;
-using MaskedKiller.Model.Ability.Mana;
-using MaskedKiller.Model.Player;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MaskedKiller.Model.Player;
+using MaskedKiller.Game.Data;
 
 namespace MaskedKiller.Factories.Player
 {
