@@ -3,6 +3,7 @@
 	public interface IAbility
 	{
 		bool CanUse { get; }
+		void CancelUse();
 		void Use();
 	}
 }

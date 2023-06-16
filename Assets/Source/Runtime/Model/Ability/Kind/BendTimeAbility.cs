@@ -1,7 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
-using MaskedKiller.Model.Ability.Mana;
 
 namespace MaskedKiller.Model.Ability.Kind
 {
@@ -9,43 +7,28 @@ namespace MaskedKiller.Model.Ability.Kind
 	{
 		public bool CanUse { get; private set; } = true;
 
-		private readonly float _timeSlowCoefficient;
-		private readonly IManaStorage _manaStorage;
-		private readonly float _abilityDuration;
-		private readonly int _useCost;
+		private readonly float _bendTimeCoefficient;
 
-		public BendTimeAbility(float timeSlowCoefficient, IManaStorage manaStorage, float abilityDuration, int useCost)
+		public BendTimeAbility(float bendTimeCoefficient)
 		{
-			if (timeSlowCoefficient <= 0 || timeSlowCoefficient >= 1)
+			if (bendTimeCoefficient <= 0 || bendTimeCoefficient >= 1)
 				throw new ArgumentOutOfRangeException($"TimeSlowCoefficient must be less than 1 and more than 0");
-			if (abilityDuration <= 0)
-				throw new ArgumentOutOfRangeException(nameof(abilityDuration));
-			if(useCost < 0)
-				throw new ArgumentOutOfRangeException(nameof(useCost));
 
-			_manaStorage = manaStorage ?? throw new ArgumentNullException(nameof(manaStorage));
-			_timeSlowCoefficient = timeSlowCoefficient;
-			_abilityDuration = abilityDuration;
-			_useCost = useCost;
+			_bendTimeCoefficient = bendTimeCoefficient;
 		}
 
 		public void Use()
 		{
 			if(!CanUse)
 				throw new InvalidOperationException();
-			
-			if(_manaStorage.CanTakeMana(_useCost))
-				_manaStorage.TakeMana(_useCost);
-			
-			SlowTime();
+
+			Time.timeScale = _bendTimeCoefficient;
+			CanUse = false;
 		}
 
-		private async void SlowTime()
+		public void CancelUse()
 		{
-			CanUse = false;
-			Time.timeScale = _timeSlowCoefficient;
-			await UniTask.Delay(TimeSpan.FromSeconds(_abilityDuration));
-			Time.timeScale = 1;
+			Time.timeScale = 1f;
 			CanUse = true;
 		}
 	}
