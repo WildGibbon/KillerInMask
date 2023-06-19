@@ -1,10 +1,11 @@
 ﻿using MaskedKiller.Game.Data.Views;
 using MaskedKiller.Model.Character.Jump;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace MaskedKiller.Factories.Character.Jump
 {
-	public class CharacterJumpWithBlockInAirFactory : ICharacterJumpFactory
+	public class CharacterJumpWithBlockInAirFactory : SerializedMonoBehaviour, ICharacterJumpFactory
 	{
 		[SerializeField] private ISurfaceCollisionDetector _collisionDetector;
 		[SerializeField] private ICharacterJumpFactory _jumpFactory;

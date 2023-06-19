@@ -7,6 +7,5 @@ namespace MaskedKiller.Game
 	public interface IGame
 	{
 		void Play();
-		void Init(IGameData data, IPlayerFactory playerFactory);
 	}
 }

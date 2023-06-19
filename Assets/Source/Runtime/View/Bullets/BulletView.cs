@@ -17,5 +17,10 @@ namespace MaskedKiller.View.Gun
 			_rigidbody.AddForce(velocity);
 			gameObject.transform.rotation = rotation;
 		}
+
+		private void OnCollisionEnter2D(Collision2D collision)
+		{
+			Destroy(gameObject);
+		}
 	}
 }
