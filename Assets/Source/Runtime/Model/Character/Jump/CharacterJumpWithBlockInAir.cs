@@ -4,14 +4,14 @@ namespace MaskedKiller.Model.Character.Jump
 {
 	public class CharacterJumpWithBlockInAir : ICharacterJump
 	{
-		public bool CanJump => _jump.CanJump && _collisionDetector.IsActive;
+		public bool CanJump => _jump.CanJump && _surfaceDetector.IsActive;
 
-		private readonly ISurfaceCollisionDetector _collisionDetector;
+		private readonly ISurfaceDetector _surfaceDetector;
 		private readonly ICharacterJump _jump;
 
-		public CharacterJumpWithBlockInAir(ISurfaceCollisionDetector collisionDetector, ICharacterJump jump)
+		public CharacterJumpWithBlockInAir(ISurfaceDetector surfaceDetector, ICharacterJump jump)
 		{
-			_collisionDetector = collisionDetector ?? throw new ArgumentNullException(nameof(collisionDetector));
+			_surfaceDetector = surfaceDetector ?? throw new ArgumentNullException(nameof(surfaceDetector));
 			_jump = jump ?? throw new ArgumentNullException(nameof(jump));
 		}
 

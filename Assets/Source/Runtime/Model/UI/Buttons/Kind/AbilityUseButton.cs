@@ -15,7 +15,8 @@ namespace MaskedKiller.Model.UI.Buttons
 
 		public void Press()
 		{
-			_selector.CurrrentItem.Use();
+			if(_selector.CurrrentItem.CanUse)
+				_selector.CurrrentItem.Use();
 		}
 	}
 }

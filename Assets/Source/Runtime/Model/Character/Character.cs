@@ -29,7 +29,7 @@ namespace MaskedKiller.Model.Character
 
 		public void Jump()
 		{
-			if(_jump.CanJump)
+			if (_jump.CanJump)
 				_jump.Jump();
 		}
 

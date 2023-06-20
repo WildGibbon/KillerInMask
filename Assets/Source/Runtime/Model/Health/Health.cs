@@ -6,21 +6,22 @@ namespace MaskedKiller.Model.Health
 {
 	public class Health : IHealth
 	{
-		public int Value { get; private set; }
-		public int MaxValue { get; private set; }
-		public bool IsDead => Value <= 0;
+		public bool IsDead => _value <= 0;
 
-		private readonly IHealthView _viev;
+		private readonly IHealthView _view;
+		private readonly int _maxValue;
+
+		private int _value;
 
 		public Health(IHealthView view, int value)
 		{
 			if (value <= 0)
 				throw new ArgumentOutOfRangeException();
 
-			_viev = view ?? throw new ArgumentNullException(nameof(view));
-			Value = MaxValue = value;
+			_view = view ?? throw new ArgumentNullException(nameof(view));
+			_value = _maxValue = value;
 			
-			_viev.Visualize(Value, MaxValue);
+			_view.Visualize(_value, _maxValue);
 		}
 
 		public void TakeDamage(int value)
@@ -30,30 +31,25 @@ namespace MaskedKiller.Model.Health
 			if (value < 0)
 				throw new ArgumentOutOfRangeException();
 
-			Value -= value;
-			_viev.Visualize(Value, MaxValue);
+			_value -= value;
+			_view.Visualize(_value, _maxValue);
 		}
 
 		public void Heal(int count)
 		{
-			if (Value + count > MaxValue)
-			{
-				Value = MaxValue;
-				return;
-			}
-
 			if (count < 0)
 				throw new ArgumentOutOfRangeException();
 			if (IsDead)
 				throw new InvalidOperationException();
+			
+			if (_value + count > _maxValue)
+			{
+				_value = _maxValue;
+				return;
+			}
 
-			Value += count;
-			_viev.Visualize(Value, MaxValue);
-		}
-
-		public bool CanHeal(int count)
-		{
-			return Value + count <= MaxValue; 
+			_value += count;
+			_view.Visualize(_value, _maxValue);
 		}
 	}
 }

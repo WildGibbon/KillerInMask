@@ -7,7 +7,7 @@ namespace MaskedKiller.Factories.Character.Jump
 {
 	public class CharacterJumpWithBlockInAirFactory : SerializedMonoBehaviour, ICharacterJumpFactory
 	{
-		[SerializeField] private ISurfaceCollisionDetector _collisionDetector;
+		[SerializeField] private ISurfaceDetector _collisionDetector;
 		[SerializeField] private ICharacterJumpFactory _jumpFactory;
 
 		public ICharacterJump Create(IViews views)
