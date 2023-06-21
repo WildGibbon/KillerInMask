@@ -25,12 +25,13 @@ namespace MaskedKiller.Model.Weapon.Kind
 
 		public void AttackIn(Vector2 direction)
 		{
-			var raycastHit = Physics2D.Raycast(_raycastSourcePoint.position, direction);
+			var raycastHit = Physics2D.Raycast(_raycastSourcePoint.position, direction, _attackDistance);
 
-			if (raycastHit && raycastHit.distance >= _attackDistance)
+			if (raycastHit)
+			{
 				_attack.Attack(raycastHit.transform.GetComponent<IHealth>());
-
-			raycastHit.rigidbody.AddForce(direction * 1000);
+				raycastHit.rigidbody.AddForce(direction * 1000);//добавлено по рофлу
+			}
 		}
 	}
 }
