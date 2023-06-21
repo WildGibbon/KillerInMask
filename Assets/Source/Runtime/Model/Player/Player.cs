@@ -19,10 +19,10 @@ namespace MaskedKiller.Model.Player
 		public void Update(float deltaTime)
 		{
 			if (_movementInput.IsMovingLeft)
-				_character.Move(MoveDirection.Left);
+				_character.Move(CharacterMoveDirection.Left);
 
 			if(_movementInput.IsMovingRight)
-				_character.Move(MoveDirection.Right);
+				_character.Move(CharacterMoveDirection.Right);
 		}
 	}
 }

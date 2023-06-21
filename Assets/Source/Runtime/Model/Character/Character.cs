@@ -8,10 +8,10 @@ namespace MaskedKiller.Model.Character
 {
 	public class Character : ICharacter
 	{
+		public Vector2 ViewDirection { get; private set; }
+		
 		private readonly ICharacterMovement _movement;
 		private readonly ICharacterJump _jump;
-
-		private Vector2 _characterViewDirection;
 
 		public Character(ICharacterMovement movement, ICharacterJump jump)
 		{
@@ -19,24 +19,16 @@ namespace MaskedKiller.Model.Character
 			_jump = jump ?? throw new ArgumentNullException(nameof(jump));
 		}
 
-		public void Move(MoveDirection direction)
+		public void Move(CharacterMoveDirection direction)
 		{
-			var viewDirection = new Vector2((int)direction, 0);
-			_movement.Move(viewDirection);
-
-			_characterViewDirection = viewDirection;
+			ViewDirection = new Vector2((int)direction, 0);
+			_movement.Move(ViewDirection);
 		}
 
 		public void Jump()
 		{
 			if (_jump.CanJump)
 				_jump.Jump();
-		}
-
-		public void AttackWithWeapon(IWeapon weapon)
-		{
-			if(weapon.CanAttack)
-				weapon.AttackIn(_characterViewDirection);
 		}
 	}
 }

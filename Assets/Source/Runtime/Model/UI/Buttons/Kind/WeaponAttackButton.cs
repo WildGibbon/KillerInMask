@@ -20,7 +20,8 @@ namespace MaskedKiller.UI.Buttons
 
 		public void Press()
 		{
-			_character.AttackWithWeapon(_selector.CurrrentItem);
+			if(_selector.CurrrentItem.CanAttack)
+				_selector.CurrrentItem.AttackIn(_character.ViewDirection);
 		}
 	}
 }

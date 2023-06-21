@@ -1,11 +1,11 @@
-﻿using MaskedKiller.Model.Weapon;
+﻿using UnityEngine;
 
 namespace MaskedKiller.Model.Character
 {
 	public interface ICharacter
 	{
-		void Move(MoveDirection direction);
-		void AttackWithWeapon(IWeapon weapon);
+		Vector2 ViewDirection { get; }
+		void Move(CharacterMoveDirection direction);
 		void Jump();
 	}
 }

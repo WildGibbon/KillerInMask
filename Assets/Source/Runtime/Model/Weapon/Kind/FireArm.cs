@@ -1,6 +1,6 @@
 ﻿using MaskedKiller.Factories;
-using System;
 using UnityEngine;
+using System;
 
 namespace MaskedKiller.Model.Weapon
 {
