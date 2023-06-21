@@ -5,11 +5,25 @@ using MaskedKiller.Game.Data.UI;
 using MaskedKiller.Game.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using MaskedKiller.Factories.Selector;
+using MaskedKiller.Model.Ability;
+using MaskedKiller.Model.Weapon;
+using MaskedKiller.Model.Character;
+using MaskedKiller.Model.UI.Buttons.Kind;
+using MaskedKiller.Model.UI.Buttons;
+using MaskedKiller.UI.Buttons;
+using MaskedKiller.Factories.Character;
+using UnityEngine.Playables;
+using MaskedKiller.Factories.Health;
 
 namespace MaskedKiller.Game
 {
 	public class Game : SerializedMonoBehaviour, IGame
 	{
+		[SerializeField] private IHealthFactory _playerHealthFactory; //это будет заюзано при создании конца игры
+		[SerializeField] private ISelectorFactory<IAbility> _abilitySelectorFactory;
+		[SerializeField] private ISelectorFactory<IWeapon> _weaponSelectorFactory;
+		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IPlayerFactory _playerFactory;
 		[SerializeField] private IViews _views;
 		[SerializeField] private IUI _ui;
@@ -18,10 +32,22 @@ namespace MaskedKiller.Game
 
 		public void Play()
 		{
-			var gameData = new GameData(_views, _ui);
-			_systemUpdates = new SystemUpdate();
+			var abilitySelector = _abilitySelectorFactory.Create();
+			var weaponSelector = _weaponSelectorFactory.Create();
+			var character = _characterFactory.Create(_views);
 
-			_systemUpdates.Add(_playerFactory.Create(gameData));
+			_ui.Buttons.PreviousWeaponButton.Init(new PreviousItemButton<IWeapon>(weaponSelector));
+			_ui.Buttons.NextWeaponButton.Init(new NextItemButton<IWeapon>(weaponSelector));
+			_ui.Buttons.WeaponAttackButton.Init(new WeaponAttackButton(character, weaponSelector));
+
+			_ui.Buttons.PreviousAbilityButton.Init(new PreviousItemButton<IAbility>(abilitySelector));
+			_ui.Buttons.NextAbilityButton.Init(new NextItemButton<IAbility>(abilitySelector));
+			_ui.Buttons.AbilityUseButton.Init(new AbilityUseButton(abilitySelector));
+
+			_ui.Buttons.JumpButton.Init(new CharacterJumpButton(character));
+
+			_systemUpdates = new SystemUpdate();
+			_systemUpdates.Add(_playerFactory.Create(character));
 		}
 
 		private void Update()
