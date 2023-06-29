@@ -12,9 +12,9 @@ namespace MaskedKiller.Model.Attack
 			_attack = attack;
 		}
 
-		public void Attack(IHealth health)
+		public void ApplyTo(IHealth health)
 		{
-			_attack.Attack(health);
+			_attack.ApplyTo(health);
 		}
 	}
 }

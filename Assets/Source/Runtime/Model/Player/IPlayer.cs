@@ -2,7 +2,5 @@
 
 namespace MaskedKiller.Model.Player
 {
-	public interface IPlayer : IUpdatable
-	{
-	}
+	public interface IPlayer : IUpdatable {}
 }

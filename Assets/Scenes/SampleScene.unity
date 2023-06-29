@@ -682,31 +682,15 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1348428572}
-    - {fileID: 1340337827}
-    - {fileID: 210272338}
-    - {fileID: 1428276968}
     - {fileID: 1203916894}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: _abilitySelectorFactory
-      Entry: 10
-      Data: 0
-    - Name: _weaponSelectorFactory
-      Entry: 10
-      Data: 1
-    - Name: _characterFactory
-      Entry: 10
-      Data: 2
-    - Name: _healthFactory
-      Entry: 10
-      Data: 3
     - Name: _movementInput
       Entry: 10
-      Data: 4
+      Data: 0
 --- !u!114 &488717194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1809,6 +1793,10 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 1428276968}
+    - {fileID: 1348428572}
+    - {fileID: 1340337827}
+    - {fileID: 210272338}
     - {fileID: 488717193}
     - {fileID: 526380497}
     - {fileID: 721222933}
@@ -1817,15 +1805,27 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: _playerFactory
+    - Name: _playerHealthFactory
       Entry: 10
       Data: 0
-    - Name: _views
+    - Name: _abilitySelectorFactory
       Entry: 10
       Data: 1
-    - Name: _ui
+    - Name: _weaponSelectorFactory
       Entry: 10
       Data: 2
+    - Name: _characterFactory
+      Entry: 10
+      Data: 3
+    - Name: _playerFactory
+      Entry: 10
+      Data: 4
+    - Name: _views
+      Entry: 10
+      Data: 5
+    - Name: _ui
+      Entry: 10
+      Data: 6
 --- !u!1 &687144563
 GameObject:
   m_ObjectHideFlags: 0

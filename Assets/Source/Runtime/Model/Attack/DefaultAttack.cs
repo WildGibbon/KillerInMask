@@ -15,7 +15,7 @@ namespace MaskedKiller.Model.Attack
 			_damage = damage;
 		}
 
-		public void Attack(IHealth health)
+		public void ApplyTo(IHealth health)
 		{
 			if(!health.IsDead)
 				health.TakeDamage(_damage);

@@ -6,6 +6,7 @@ namespace MaskedKiller.Model.Weapon
 {
 	public class FireArm : IWeapon
 	{
+		//захерачить декоратор оружие с шумом
 		public bool CanAttack => true;
 
 		private readonly IBulletFactory _bulletFactory;

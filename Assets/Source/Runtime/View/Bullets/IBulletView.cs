@@ -9,6 +9,7 @@ namespace MaskedKiller.View.Gun
 {
 	public interface IBulletView
 	{
+		//убрать это говно
 		void Visualize(Vector2 direction, Quaternion rotation);
 	}
 }

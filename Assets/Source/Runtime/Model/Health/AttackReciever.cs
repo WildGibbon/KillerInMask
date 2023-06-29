@@ -17,7 +17,7 @@ namespace MaskedKiller.Model.Health
 		{
 			if(collision.gameObject.TryGetComponent<IAttack>(out var attack)) 
 			{
-				attack.Attack(_health);
+				attack.ApplyTo(_health);
 			}
 		}
 	}

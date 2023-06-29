@@ -4,6 +4,6 @@ namespace MaskedKiller.Model.Attack
 {
 	public interface IAttack
 	{
-		void Attack(IHealth health);
+		void ApplyTo(IHealth health);
 	}
 }

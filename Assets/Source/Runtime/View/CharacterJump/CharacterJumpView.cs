@@ -4,6 +4,7 @@ namespace MaskedKiller.View.CharacterJump
 {
 	public class CharacterJumpView : MonoBehaviour, ICharacterJumpView
 	{
+		//убрать это говно
 		private Rigidbody2D _rigidbody;
 
 		private void Awake()

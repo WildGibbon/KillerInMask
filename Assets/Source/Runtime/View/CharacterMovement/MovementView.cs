@@ -4,6 +4,7 @@ namespace MaskedKiller.View.Movement
 {
 	public class MovementView : MonoBehaviour, IMovementView
 	{
+		//убрать это говно
 		private Rigidbody2D _rigidbody;
 
 		private void Awake()
