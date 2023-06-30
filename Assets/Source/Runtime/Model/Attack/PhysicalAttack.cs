@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MaskedKiller.Model.Attack
 {
-	public class PhysicalAttack : MonoBehaviour, IAttack
+	public class PhysicalAttack : MonoBehaviour
 	{
 		private IAttack _attack;
 
@@ -12,9 +12,10 @@ namespace MaskedKiller.Model.Attack
 			_attack = attack;
 		}
 
-		public void ApplyTo(IHealth health)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			_attack.ApplyTo(health);
+			if (collision.transform.TryGetComponent<IHealth>(out var health))
+				_attack.ApplyTo(health);
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using MaskedKiller.Model.UI.Buttons.Kind;
+using MaskedKiller.Factories.Character;
 using MaskedKiller.Factories.Selector;
 using MaskedKiller.Game.SystemUpdates;
-using MaskedKiller.Factories.Character;
 using MaskedKiller.Factories.Player;
 using MaskedKiller.Model.UI.Buttons;
 using MaskedKiller.Factories.Health;
@@ -20,7 +20,6 @@ namespace MaskedKiller.Game
 {
 	public class Game : SerializedMonoBehaviour, IGame
 	{
-		[SerializeField] private IHealthFactory _playerHealthFactory; //это будет заюзано при создании конца игры
 		[SerializeField] private ISelectorFactory<IAbility> _abilitySelectorFactory;
 		[SerializeField] private ISelectorFactory<IWeapon> _weaponSelectorFactory;
 		[SerializeField] private ICharacterFactory _characterFactory;

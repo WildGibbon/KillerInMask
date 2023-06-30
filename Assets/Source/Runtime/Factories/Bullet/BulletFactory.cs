@@ -1,8 +1,8 @@
 ﻿using MaskedKiller.Model.Weapon;
+using MaskedKiller.Model.Attack;
+using Sirenix.OdinInspector;
 using MaskedKiller.View.Gun;
 using UnityEngine;
-using Sirenix.OdinInspector;
-using MaskedKiller.Model.Attack;
 
 namespace MaskedKiller.Factories
 {

@@ -1,7 +1,6 @@
 ﻿using MaskedKiller.Model.Health;
 using MaskedKiller.View.Enemy;
 using System;
-using UnityEngine;
 
 namespace MaskedKiller.Model.Enemy
 {
@@ -9,6 +8,8 @@ namespace MaskedKiller.Model.Enemy
 	{
 		private readonly IEnemyView _view;
 		private readonly IHealth _health;
+
+		private bool _visualized;
 
 		public Enemy(IEnemyView view, IHealth health)
 		{
@@ -18,8 +19,11 @@ namespace MaskedKiller.Model.Enemy
 
 		public void Update(float deltaTime)
 		{
-			if (_health.IsDead)
+			if (_health.IsDead && !_visualized)
+			{
 				_view.VisualizeDeath();
+				_visualized = true;
+			}
 		}
 	}
 }
