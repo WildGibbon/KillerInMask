@@ -6,7 +6,7 @@ namespace MaskedKiller.View.Enemy
 	{
 		public void VisualizeDeath()
 		{
-			Destroy(gameObject);
+			GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
 		}
 	}
 }

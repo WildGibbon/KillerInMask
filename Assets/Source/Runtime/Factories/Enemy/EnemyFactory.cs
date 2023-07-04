@@ -1,6 +1,6 @@
 ﻿using MaskedKiller.Factories.Health;
-using MaskedKiller.Model.Enemy;
 using MaskedKiller.Model.Health;
+using MaskedKiller.Model.Enemy;
 using MaskedKiller.View.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;

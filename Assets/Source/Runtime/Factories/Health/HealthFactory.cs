@@ -10,9 +10,16 @@ namespace MaskedKiller.Factories.Health
 		[SerializeField] private IHealthView _view;
 		[SerializeField] private int _healthValue;
 
+		private IHealth _createdHealth;
+
 		public IHealth Create()
 		{
-			return new Model.Health.Health(_view, _healthValue);
+			if(_createdHealth != null)
+				return _createdHealth;
+
+			_createdHealth = new Model.Health.Health(_view, _healthValue);
+
+			return _createdHealth;
 		}
 	}
 }
