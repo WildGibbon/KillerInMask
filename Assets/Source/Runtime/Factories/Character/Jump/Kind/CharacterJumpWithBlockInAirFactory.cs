@@ -1,5 +1,4 @@
-﻿using MaskedKiller.Game.Data.Views;
-using MaskedKiller.Model.Character.Jump;
+﻿using MaskedKiller.Model.Character.Jump;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,9 +9,9 @@ namespace MaskedKiller.Factories.Character.Jump
 		[SerializeField] private ISurfaceDetector _collisionDetector;
 		[SerializeField] private ICharacterJumpFactory _jumpFactory;
 
-		public ICharacterJump Create(IViews views)
+		public ICharacterJump Create()
 		{
-			return new CharacterJumpWithBlockInAir(_collisionDetector, _jumpFactory.Create(views));
+			return new CharacterJumpWithBlockInAir(_collisionDetector, _jumpFactory.Create());
 		}
 	}
 }

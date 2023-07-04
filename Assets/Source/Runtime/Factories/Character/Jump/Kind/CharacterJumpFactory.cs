@@ -1,9 +1,7 @@
-﻿using MaskedKiller.Game.Data.Views;
-using MaskedKiller.Model.Character.Jump;
-using MaskedKiller.View.CharacterJump;
+﻿using MaskedKiller.Model.Character.Jump;
 using Sirenix.OdinInspector;
-using System;
 using UnityEngine;
+using System;
 
 namespace MaskedKiller.Factories.Character.Jump
 {
@@ -11,12 +9,16 @@ namespace MaskedKiller.Factories.Character.Jump
 	{
 		[SerializeField] private float _jumpForce;
 
-		public ICharacterJump Create(IViews views)
-		{
-			if (views == null)
-				throw new ArgumentNullException(nameof(views));
+		private Rigidbody2D _rigidbody;
 
-			return new CharacterJump(views.CharacterJumpView, _jumpForce);
+		private void Awake()
+		{
+			_rigidbody = GetComponent<Rigidbody2D>();
+		}
+
+		public ICharacterJump Create()
+		{
+			return new CharacterJump(_rigidbody, _jumpForce);
 		}
 	}
 }

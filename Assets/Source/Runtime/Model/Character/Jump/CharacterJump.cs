@@ -1,4 +1,4 @@
-﻿using MaskedKiller.View.CharacterJump;
+﻿using UnityEngine;
 using System;
 
 namespace MaskedKiller.Model.Character.Jump
@@ -7,15 +7,15 @@ namespace MaskedKiller.Model.Character.Jump
 	{
 		public bool CanJump => true;
 
-		private readonly ICharacterJumpView _view;
+		private readonly Rigidbody2D _rigidbody;
 		private readonly float _jumpForce;
 
-		public CharacterJump(ICharacterJumpView view, float jumpForce)
+		public CharacterJump(Rigidbody2D rigidbody, float jumpForce)
 		{
 			if (_jumpForce < 0)
 				throw new ArgumentOutOfRangeException(nameof(jumpForce));
 
-			_view = view ?? throw new ArgumentNullException(nameof(view));
+			_rigidbody = rigidbody ?? throw new ArgumentNullException(nameof(rigidbody));
 			_jumpForce = jumpForce;
 		}
 
@@ -24,7 +24,7 @@ namespace MaskedKiller.Model.Character.Jump
 			if(!CanJump)
 				throw new InvalidOperationException(nameof(Jump));
 
-			_view.Visualize(_jumpForce);
+			_rigidbody.AddForce(_jumpForce * Vector2.up);
 		}
 	}
 }

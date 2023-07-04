@@ -1,9 +1,6 @@
-﻿using MaskedKiller.Factories.Pickups;
-using MaskedKiller.Model.Pickups;
-using System.Collections.Generic;
+﻿using MaskedKiller.Model.Pickups;
 using MaskedKiller.Model.Health;
 using UnityEngine;
-using System.Linq;
 using System;
 
 namespace MaskedKiller.Model.Enemy
@@ -29,7 +26,6 @@ namespace MaskedKiller.Model.Enemy
 			{
 				_pickupSpreader.Use();
 				_visualized = true;
-				Debug.Log("huy");
 			}
 			
 			_enemy.Update(deltaTime);

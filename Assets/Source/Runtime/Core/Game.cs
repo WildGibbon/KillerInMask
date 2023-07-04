@@ -4,8 +4,6 @@ using MaskedKiller.Factories.Selector;
 using MaskedKiller.Game.SystemUpdates;
 using MaskedKiller.Factories.Player;
 using MaskedKiller.Model.UI.Buttons;
-using MaskedKiller.Factories.Health;
-using MaskedKiller.Game.Data.Views;
 using MaskedKiller.Factories.Enemy;
 using MaskedKiller.Model.Ability;
 using MaskedKiller.Model.Weapon;
@@ -25,7 +23,6 @@ namespace MaskedKiller.Game
 		[SerializeField] private ICharacterFactory _characterFactory;
 		[SerializeField] private IEnemiesFactory _enemiesFactory;
 		[SerializeField] private IPlayerFactory _playerFactory;
-		[SerializeField] private IViews _views;
 		[SerializeField] private IUI _ui;
 
 		private ISystemUpdate _systemUpdates;
@@ -34,7 +31,7 @@ namespace MaskedKiller.Game
 		{
 			var abilitySelector = _abilitySelectorFactory.Create();
 			var weaponSelector = _weaponSelectorFactory.Create();
-			var character = _characterFactory.Create(_views);
+			var character = _characterFactory.Create();
 
 			_ui.Buttons.PreviousWeaponButton.Init(new PreviousItemButton<IWeapon>(weaponSelector));
 			_ui.Buttons.NextWeaponButton.Init(new NextItemButton<IWeapon>(weaponSelector));
