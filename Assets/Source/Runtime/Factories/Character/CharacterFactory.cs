@@ -12,9 +12,15 @@ namespace MaskedKiller.Factories.Character
 		[SerializeField] private ICharacterJumpFactory _jumpFactory;
 		[SerializeField] private IMovementFactory _movementFactory;
 
+		private ICharacter _instance; 
+
 		public ICharacter Create()
 		{
-			return new Model.Character.Character(_movementFactory.Create(), _jumpFactory.Create());
+			if(_instance != null)
+				return _instance;
+
+			_instance = new Model.Character.Character(_movementFactory.Create(), _jumpFactory.Create());
+			return _instance;
 		}
 	}
 }

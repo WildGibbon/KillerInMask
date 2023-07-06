@@ -1,13 +1,12 @@
 ﻿using MaskedKiller.Model.Pickups;
 using MaskedKiller.Model.Health;
-using UnityEngine;
 using System;
 
 namespace MaskedKiller.Model.Enemy
 {
 	public class EnemyWithPickup : IEnemy
 	{
-		private readonly ISpreader _pickupSpreader;
+		private readonly ISpreader _spreader;
 		private readonly IHealth _health;
 		private readonly IEnemy _enemy;
 
@@ -15,7 +14,7 @@ namespace MaskedKiller.Model.Enemy
 
 		public EnemyWithPickup(ISpreader pickupSpreader, IHealth health, IEnemy enemy)
 		{
-			_pickupSpreader = pickupSpreader ?? throw new ArgumentNullException(nameof(pickupSpreader));
+			_spreader = pickupSpreader ?? throw new ArgumentNullException(nameof(pickupSpreader));
 			_health = health ?? throw new ArgumentNullException(nameof(health));
 			_enemy = enemy ?? throw new ArgumentNullException(nameof(enemy));
 		}
@@ -24,7 +23,7 @@ namespace MaskedKiller.Model.Enemy
 		{
 			if (_health.IsDead && !_visualized)
 			{
-				_pickupSpreader.Use();
+				_spreader.Use();
 				_visualized = true;
 			}
 			

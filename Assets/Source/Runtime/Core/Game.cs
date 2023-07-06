@@ -45,6 +45,8 @@ namespace MaskedKiller.Game
 
 			_systemUpdates = new SystemUpdate();
 
+			Debug.Log(_enemiesFactory.Create().ToArray<IEnemy>());
+
 			_systemUpdates.Add(_enemiesFactory.Create().ToArray<IEnemy>());
 			_systemUpdates.Add(_playerFactory.Create(character));
 		}

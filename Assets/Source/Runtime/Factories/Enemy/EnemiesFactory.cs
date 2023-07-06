@@ -8,13 +8,15 @@ namespace MaskedKiller.Factories.Enemy
 {
 	public class EnemiesFactory : SerializedMonoBehaviour, IEnemiesFactory
 	{
+		[SerializeField] private List<IEnemyFactory> _list;
+
 		public IReadOnlyList<IEnemy> Create()
 		{
 			var enemies = new List<IEnemy>();
 
-			GetComponentsInChildren<IEnemyFactory>()
-				.ToList<IEnemyFactory>()
-				.ForEach(factory => enemies.Add(factory.Create()));
+			//GetComponentsInChildren<IEnemyFactory>()
+			//.ToList<IEnemyFactory>();
+			_list.ForEach(factory => enemies.Add(factory.Create()));
 
 			return enemies;
 		}

@@ -1,6 +1,5 @@
 ﻿using MaskedKiller.Model.Health;
 using MaskedKiller.View.Enemy;
-using UnityEngine;
 using System;
 
 namespace MaskedKiller.Model.Enemy
