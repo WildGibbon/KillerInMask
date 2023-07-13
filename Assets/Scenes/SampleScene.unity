@@ -499,6 +499,7 @@ Transform:
   - {fileID: 164228593}
   - {fileID: 1753354225}
   - {fileID: 115223438}
+  - {fileID: 1395207720}
   m_Father: {fileID: 577605656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1898,6 +1899,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1753354226}
+    - {fileID: 1395207723}
     - {fileID: 235126744}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -1907,12 +1909,16 @@ MonoBehaviour:
     - Name: _pointMoverFactory
       Entry: 10
       Data: 0
-    - Name: _enemyFactory
+    - Name: _weaponFactory
       Entry: 10
       Data: 1
+    - Name: _enemyFactory
+      Entry: 10
+      Data: 2
   _patrolPoints:
   - {fileID: 1503417089}
   - {fileID: 1600088646}
+  _playerDetectDistance: 5
 --- !u!1 &597824286
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,6 +4316,115 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363561417}
   m_CullTransparentMesh: 1
+--- !u!1 &1395207719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395207720}
+  - component: {fileID: 1395207723}
+  - component: {fileID: 1395207722}
+  - component: {fileID: 1395207721}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395207720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395207719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 235126737}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395207721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395207719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e89c7644d74298479006c74c0214e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _bulletPrefab: {fileID: 1816306857579784471, guid: 79cc6c781383f7e4487d4a1223aa49f9, type: 3}
+  _spawnPoint: {fileID: 1395207720}
+  _throwForce: 10
+  _damage: 3
+--- !u!114 &1395207722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395207719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d72ef71fa42bfe439e3f592af10c81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1395207721}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _bulletFactory
+      Entry: 10
+      Data: 0
+--- !u!114 &1395207723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395207719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f431e06d5a5604782ccd0cef820f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1395207722}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _weaponFactory
+      Entry: 10
+      Data: 0
+  _delayInSeconds: 1
 --- !u!1 &1443721001
 GameObject:
   m_ObjectHideFlags: 0
