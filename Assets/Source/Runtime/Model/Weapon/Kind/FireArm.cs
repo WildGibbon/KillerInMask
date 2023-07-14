@@ -18,7 +18,7 @@ namespace MaskedKiller.Model.Weapon
 
 		public void AttackIn(Vector2 direction)
 		{
-			_bulletFactory.Create().Throw(direction);
+			_bulletFactory.Create().Throw(direction.normalized);
 		}
 	}
 }

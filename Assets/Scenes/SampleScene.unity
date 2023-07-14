@@ -4343,7 +4343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395207719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235126737}
@@ -4372,7 +4372,7 @@ MonoBehaviour:
     SerializationNodes: []
   _bulletPrefab: {fileID: 1816306857579784471, guid: 79cc6c781383f7e4487d4a1223aa49f9, type: 3}
   _spawnPoint: {fileID: 1395207720}
-  _throwForce: 10
+  _throwForce: 100
   _damage: 3
 --- !u!114 &1395207722
 MonoBehaviour:

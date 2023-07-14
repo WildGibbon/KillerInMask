@@ -6,6 +6,7 @@ using MaskedKiller.Model.Weapon;
 using BananaParty.BehaviorTree;
 using UnityEngine;
 using System;
+using System.Runtime.InteropServices;
 
 namespace MaskedKiller.Model.Enemy.Decorators
 {
@@ -33,19 +34,16 @@ namespace MaskedKiller.Model.Enemy.Decorators
 			});
 
 			_enemy = enemy ?? throw new ArgumentNullException(nameof(enemy));
-			_treeGraph = new TextBehaviorTreeGraph("senior");
-			_treeGraph.Write(_behaviour);
+			_treeGraph = new TextBehaviorTreeGraph("pidr");
 		}
 
 		public void Update(float deltaTime)
 		{
-			if (_behaviour.Status > BehaviorNodeStatus.Running)
-				_behaviour.Reset();
-
 			_behaviour.Execute((long)deltaTime);
 			_enemy.Update(deltaTime);
-			
-			//Debug.Log(_treeGraph.ToString());
+
+			_behaviour.WriteToGraph(_treeGraph);
+			Debug.Log(_treeGraph.ToString());
 		}
 	}
 }

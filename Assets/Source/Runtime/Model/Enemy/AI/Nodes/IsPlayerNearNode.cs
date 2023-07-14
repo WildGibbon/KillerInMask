@@ -1,7 +1,7 @@
 ﻿using MaskedKiller.Model.Enemy.AI.Stuff;
 using BananaParty.BehaviorTree;
-using System;
 using UnityEngine;
+using System;
 
 namespace MaskedKiller.Model.Enemy.AI.Nodes
 {
@@ -16,8 +16,6 @@ namespace MaskedKiller.Model.Enemy.AI.Nodes
 
 		public override BehaviorNodeStatus OnExecute(long time)
 		{
-			Debug.Log(_playerDetector.IsPlayerNear);
-
 			return _playerDetector.IsPlayerNear switch
 			{
 				false => BehaviorNodeStatus.Failure,

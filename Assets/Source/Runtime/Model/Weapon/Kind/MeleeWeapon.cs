@@ -25,7 +25,7 @@ namespace MaskedKiller.Model.Weapon.Kind
 
 		public void AttackIn(Vector2 direction)
 		{
-			var raycastHit = Physics2D.Raycast(_raycastSourcePoint.position, direction);
+			var raycastHit = Physics2D.Raycast(_raycastSourcePoint.position, direction.normalized);
 
 			if (Vector2.Distance(raycastHit.point, _raycastSourcePoint.position) <= _attackDistance)
 			{

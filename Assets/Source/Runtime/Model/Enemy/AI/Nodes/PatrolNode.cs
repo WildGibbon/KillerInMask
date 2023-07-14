@@ -33,8 +33,7 @@ namespace MaskedKiller.Model.Enemy.AI.Nodes
 			}
 
 			_pointMover.Update();
-
-			return BehaviorNodeStatus.Running;
+			return BehaviorNodeStatus.Success;
 		}
 	}
 }
