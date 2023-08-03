@@ -1,29 +1,23 @@
-﻿using MaskedKiller.Model.Health;
-using MaskedKiller.View.Enemy;
-using System;
+﻿using BananaParty.BehaviorTree;
 
 namespace MaskedKiller.Model.Enemy
 {
 	public class Enemy : IEnemy
 	{
-		private readonly IEnemyView _view;
-		private readonly IHealth _health;
+		private readonly IBehaviorNode _behaviour;
 
-		private bool _visualized;
-
-		public Enemy(IEnemyView view, IHealth health)
+		public Enemy(IBehaviorNode behaviorTreeRoot)
 		{
-			_view = view ?? throw new ArgumentNullException(nameof(view));
-			_health = health ?? throw new ArgumentNullException(nameof(health));
+			_behaviour = behaviorTreeRoot;
 		}
 
 		public void Update(float deltaTime)
 		{
-			if (_health.IsDead && !_visualized)
-			{
-				_view.VisualizeDeath();
-				_visualized = true;
-			}
+			if(_behaviour.Status > BehaviorNodeStatus.Running)
+				_behaviour.Reset();
+
+			_behaviour.Execute((long)deltaTime);
 		}
 	}
 }
+ 

@@ -96,5 +96,10 @@ namespace BananaParty.BehaviorTree
         {
             return $"{Name}\n{_stringBuilder}";
         }
+
+        public void Clear()
+        {
+            _stringBuilder.Clear();
+        }
     }
 }

@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 235126744}
   - component: {fileID: 235126745}
   - component: {fileID: 235126746}
+  - component: {fileID: 235126747}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -491,7 +492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235126736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.99, y: -1.51, z: 0}
   m_LocalScale: {x: 1, y: 1.6, z: 1}
   m_Children:
   - {fileID: 1869966686}
@@ -500,7 +501,7 @@ Transform:
   - {fileID: 1753354225}
   - {fileID: 115223438}
   - {fileID: 1395207720}
-  m_Father: {fileID: 577605656}
+  m_Father: {fileID: 1989052822}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235126738
@@ -579,7 +580,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &235126741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -736,6 +737,44 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _jumpForce: 10
+--- !u!114 &235126747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235126736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378d641c162b90d4785e06b0b480c119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1753354226}
+    - {fileID: 1395207723}
+    - {fileID: 235126744}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _pointMoverFactory
+      Entry: 10
+      Data: 0
+    - Name: _weaponFactory
+      Entry: 10
+      Data: 1
+    - Name: _enemyFactory
+      Entry: 10
+      Data: 2
+  _patrolPoints:
+  - {fileID: 1503417089}
+  - {fileID: 1600088646}
+  _playerDetectDistance: 5
+  _weaponTransform: {fileID: 1395207720}
 --- !u!1 &311511477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1256,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.33688444}
+  m_Offset: {x: 0, y: -0.19312324}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1228,7 +1267,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.32623112}
+  m_Size: {x: 1, y: 0.61375356}
   m_EdgeRadius: 0
 --- !u!1 &490769075
 GameObject:
@@ -1850,75 +1889,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530536231}
   m_CullTransparentMesh: 1
---- !u!1 &577605655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 577605656}
-  - component: {fileID: 577605657}
-  m_Layer: 0
-  m_Name: TopEnemyDecorator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &577605656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577605655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.99, y: -1.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 235126737}
-  m_Father: {fileID: 1989052822}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &577605657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577605655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378d641c162b90d4785e06b0b480c119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1753354226}
-    - {fileID: 1395207723}
-    - {fileID: 235126744}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _pointMoverFactory
-      Entry: 10
-      Data: 0
-    - Name: _weaponFactory
-      Entry: 10
-      Data: 1
-    - Name: _enemyFactory
-      Entry: 10
-      Data: 2
-  _patrolPoints:
-  - {fileID: 1503417089}
-  - {fileID: 1600088646}
-  _playerDetectDistance: 5
 --- !u!1 &597824286
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,7 +4313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395207719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.31, z: 0}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235126737}
@@ -4372,7 +4342,7 @@ MonoBehaviour:
     SerializationNodes: []
   _bulletPrefab: {fileID: 1816306857579784471, guid: 79cc6c781383f7e4487d4a1223aa49f9, type: 3}
   _spawnPoint: {fileID: 1395207720}
-  _throwForce: 100
+  _throwForce: 2000
   _damage: 3
 --- !u!114 &1395207722
 MonoBehaviour:
@@ -5697,7 +5667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774672021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029999971, y: 0.42, z: 0}
+  m_LocalPosition: {x: 0.029999971, y: 0.384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1340337823}
@@ -6140,7 +6110,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 577605657}
+    - {fileID: 235126747}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -6173,7 +6143,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 577605656}
+  - {fileID: 235126737}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

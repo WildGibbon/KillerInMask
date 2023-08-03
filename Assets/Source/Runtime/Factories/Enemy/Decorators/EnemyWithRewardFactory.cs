@@ -1,8 +1,8 @@
-﻿using MaskedKiller.Factories.Pickups;
+﻿using MaskedKiller.Model.Enemy.Decorators;
+using MaskedKiller.Factories.Pickups;
 using MaskedKiller.Factories.Health;
 using MaskedKiller.Model.Pickups;
 using System.Collections.Generic;
-using MaskedKiller.Model.Health;
 using MaskedKiller.Model.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;

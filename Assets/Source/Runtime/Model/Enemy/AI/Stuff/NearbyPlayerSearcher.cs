@@ -19,7 +19,7 @@ namespace MaskedKiller.Model.Enemy.AI.Stuff
 		{
 			var playerCollider = Physics2D.OverlapCircle(_searcherTransform.position, _searchDistance);
 
-			return playerCollider.GetComponent<Transform>();
+			return playerCollider.transform;
 		}
 	}
 }

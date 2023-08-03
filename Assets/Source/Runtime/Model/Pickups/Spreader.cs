@@ -2,8 +2,6 @@
 using MaskedKiller.Factories.Pickups;
 using UnityEngine;
 using System;
-using System.Collections.Generic;
-using MaskedKiller.Pickups.Interfaces;
 
 namespace MaskedKiller.Model.Pickups
 {

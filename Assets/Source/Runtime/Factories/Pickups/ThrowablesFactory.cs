@@ -1,5 +1,4 @@
 ﻿using MaskedKiller.Pickups.Interfaces;
-using MaskedKiller.Model.Pickups;
 using System.Collections.Generic;
 using UnityEngine;
 

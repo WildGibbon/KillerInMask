@@ -2,7 +2,7 @@
 using MaskedKiller.Model.Health;
 using System;
 
-namespace MaskedKiller.Model.Enemy
+namespace MaskedKiller.Model.Enemy.Decorators
 {
 	public class EnemyWithPickup : IEnemy
 	{

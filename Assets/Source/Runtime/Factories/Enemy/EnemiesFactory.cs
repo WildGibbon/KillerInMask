@@ -12,13 +12,11 @@ namespace MaskedKiller.Factories.Enemy
 
 		public IReadOnlyList<IEnemy> Create()
 		{
-			var enemies = new List<IEnemy>();
-
-			//GetComponentsInChildren<IEnemyFactory>()
-			//.ToList<IEnemyFactory>();
+			var enemies = new List<IEnemy>();;
 			_list.ForEach(factory => enemies.Add(factory.Create()));
 
 			return enemies;
 		}
 	}
 }
+ 
